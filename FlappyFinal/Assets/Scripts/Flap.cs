@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Flap : MonoBehaviour
 {
@@ -25,7 +26,13 @@ public class Flap : MonoBehaviour
     {
         Destroy(birdSprite);
         Destroy(col.gameObject);
-        Debug.Log("Collision!");
+        Transition();
+
+    }
+
+    void Transition()
+    {
+        SceneManager.LoadScene("RestartScreen");
     }
 
 }
